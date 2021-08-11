@@ -1,0 +1,6 @@
+{
+  "name": "p02-techsupport-main",
+  "region": "us-east-1",
+  "accelerated": false,
+  "url": "https://p02-techsupport-main.s3.amazonaws.com"
+}
