@@ -1,0 +1,108 @@
+<!--
+File Name:			about.html
+Name:						CodaBool
+Description:		Content for the page which explains the history of the Tech Support company.
+								The page is informative but also short enough to deliver the story of the company in a couple sentences for each event.
+Date:						10/1/19
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Tech Support About</title>
+		<link rel="stylesheet" href="./css/about.css" />
+		<link rel="icon" type="image/png" href="/images/favicon-16x16.gif" sizes="16x16">
+		<link rel="icon" type="image/png" href="/images/favicon-32x32.gif" sizes="32x32">
+		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+		<!-- Fonts are pulled from Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Chakra+Petch|Libre+Baskerville|Lora&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div id="top">
+			<header>
+				<!-- Title -->
+				<h1>Tech Support</h1>
+			</header>
+			<nav>
+				<ul>
+					<!-- Navigational links to each page -->
+					<li><a href="./index.html">Home</a></li>
+					<li><a href="./services.html">Services</a></li>
+					<li><a href="./gallery.html">Gallery</a></li>
+					<li><a href="./contact.html">Contact</a></li>
+					<li class="currentPage"><a href="./about.html">About</a></li>
+				</ul>
+			</nav>
+		</div>
+		<article>
+			<div class="navBox">
+				<a href="http://codabool.com/projects" class="btn" id="btn-home">GO HOME</a><br>
+				<a href="https://github.com/CodaBool/p02-techsupport" class="btn" id="btn-code">SEE CODE</a>
+			</div>
+			<!-- div containing the entire timeline content -->
+			<div class="timeline">
+				<!-- content is split between left and right containers -->
+				<div class="container left">
+					<!-- Event container -->
+					<div class="content">
+						<!-- Year for the timeline event -->
+						<h2>2007</h2>
+						<!-- Description for the timeline event -->
+						<p>Tech Support started in 2007. As a family owned business. Started by Coda Bool, some other guy, and a third guy</p>
+					</div>
+				</div>
+				<!-- content is split between left and right containers -->
+				<div class="container right">
+					<div class="content">
+						<h2>2008</h2>
+						<p>Tech Support establishes itself as a professional tech support company. Going on to make over 221 phone repairs,  and help 24 people with their home tech installations</p>
+					</div>
+				</div>
+			  <div class="container left">
+				<div class="content">
+				  <h2>2012</h2>
+				  <p>Tech Support acquires the lease for a retail space in a very popular location</p>
+				</div>
+			  </div>
+			  <div class="container right">
+				<div class="content">
+				  <h2>2015</h2>
+				  <p>Tech Support begins its online support assistance. Finishing the year with 397 online support tickets</p>
+				</div>
+			  </div>
+			  <div class="container left">
+				<div class="content">
+				  <h2>2018</h2>
+				  <p>A fire burns down everything, the building is in ruins. Coda Bool is greatly saddened</p>
+				</div>
+			  </div>
+			  <div class="container right">
+				<div class="content">
+				  <h2>2019</h2>
+				  <p>Tech Support acquires a lease for another building across the street and is back in business!</p>
+				</div>
+			  </div>
+			</div>
+		</article>
+		<!-- Bottom footer content which has a helpful email for lost users -->
+		<footer>
+			Having trouble? email support: placeholder@mail.com <br>Tech Support &bull; Some, STATE
+		</footer>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn-home").hover(function(){
+				$("#img-home").css("height", 200);
+				}, function(){
+				$("#img-home").css("height", 0);
+			});
+			$("#btn-code").hover(function(){
+				$("#img-code").css("height", 200);
+				}, function(){
+				$("#img-code").css("height", 0);
+			});
+		});
+	</script>
+</html>

@@ -1,0 +1,117 @@
+<!--
+File Name:		chat.html
+Name:					CodaBool
+Description:	Content for a live chat between the Tech Support technician. A brief intro paragraph should explain what the user is being offered. e.g. "You are about to speak to a live tech". The final page will be setup similar to how a user might find a phone text messaging app.
+Date:			10/1/19
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Tech Support Services</title>
+		<link rel="stylesheet" href="./css/chat.css" />
+		<link rel="icon" type="image/png" href="/images/favicon-16x16.gif" sizes="16x16">
+		<link rel="icon" type="image/png" href="/images/favicon-32x32.gif" sizes="32x32">
+		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+		<!-- Fonts are pulled from Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Chakra+Petch|Libre+Baskerville|Lora&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div id="top">
+			<header>
+				<!-- Title -->
+				<h1>Tech Support</h1>
+			</header>
+			<nav>
+				<ul>
+					<!-- Navigational links to each page -->
+					<li><a href="./index.html">Home</a></li>
+					<li class="currentPage"><a href="./services.html">Services</a></li>
+					<li><a href="./gallery.html">Gallery</a></li>
+					<li><a href="./contact.html">Contact</a></li>
+					<li><a href="./about.html">About</a></li>
+				</ul>
+				<ul>
+					<!-- Sub row of navigational links to each service page -->
+					<li class="currentPage"><a href="./chat.html">Chat</a></li>
+					<li><a href="./store.html">In Store</a></li>
+					<li><a href="./home.html">In Home</a></li>
+					<li><a href="./contact.html">Phone</a></li>
+				</ul>
+			</nav>
+		</div>
+		<article>
+			<div class="navBox">
+				<img src="./images/navBox-home.png" id="img-home">
+				<a href="http://codabool.com/projects" class="navBox-btn" id="btn-home">GO HOME</a>
+				<a href="https://github.com/CodaBool/p02-techsupport" class="navBox-btn" id="btn-code">SEE CODE</a>
+				<img src="./images/navBox-code.png" id="img-code">
+			</div>
+			<div class="navBox-small">
+				<a href="http://codabool.com/projects" class="navBox-btn" id="btn-home">HOME</a>
+				<a href="https://github.com/CodaBool/p02-techsupport" class="navBox-btn" id="btn-code">CODE</a>
+			</div>
+			<!-- Intro title to the service -->
+			<h2>Let's Get Started</h2>
+			<ul class="container">
+				<li class="item">
+					<!-- Description for the chat service -->
+					<p>We offer live online chat. You can speak with one of our professional technicians. They will direct you to the best solution for you. To start click on "Begin Chat"</p><br>
+					<!-- Button to begin the chat service -->
+					<button onclick="setTimeout(startTimer, 500);" id="startChat" >Begin Chat</button>
+				</li>
+			</ul>
+			<p></p>
+		</article>
+		<!-- Bottom footer content which has a helpful email for lost users -->
+		<footer>
+			Having trouble chatting? Call ###-###-#### <br>Tech Support &bull; Some, STATE
+		</footer>
+		<!-- Modal which is hidden until the "Begin Chat" button is pressed -->
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<!-- Close icon -->
+				<span class="close">&times;</span>
+				<!-- Name of technician -->
+				<p id="chatTitle">David</p>
+				<!-- Picture of technician -->
+				<img src="./images/technician.jpg" alt="Chat Picture" id="titleDavid">
+				<!-- Box for the chat history -->
+				<div id="chatBox"></div>
+				<!-- Placeholder text message image which asks the user to describe their issue -->
+				<img src="./images/bubbles.png" alt="describe your issue" id="chatStart">
+				<!-- Container for a placeholder typing gif as well as the technician's picture -->
+				<div id="responding">
+					<!-- Technician's picture -->
+					<img src="./images/technician.jpg" alt="In Chat Picture" id="chatDavid">
+					<!-- Typing Gif -->
+					<img src="./images/typing.gif" alt="typing" id="typing">
+				</div>
+				<!-- Form container for the text input and a button input -->
+				<form name="chat" id="chatform">
+					<!-- where the user enters their message -->
+					<input name="usermsg" type="text" id="usermsg" size="13"/>
+					<!-- Button to send the message -->
+					<input name="send" type="submit" id="send" />
+				</form>
+			</div>
+		</div>
+		<script src="./javascript/chat.js"></script>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn-home").hover(function(){
+				$("#img-home").css("height", 200);
+				}, function(){
+				$("#img-home").css("height", 0);
+			});
+			$("#btn-code").hover(function(){
+				$("#img-code").css("height", 200);
+				}, function(){
+				$("#img-code").css("height", 0);
+			});
+		});
+	</script>
+</html>

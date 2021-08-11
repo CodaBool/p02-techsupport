@@ -1,0 +1,336 @@
+/*
+ * File Name:		chat.css
+ * Name:						Coda Bool
+ * Description:		Style for a live chat between the Tech Support technician. Should be interactive and familiar to how a user might use a phone text messaging app.
+ * Date:			10/1/19
+ */
+/* reset rules */
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+   list-style-type: none;
+}
+
+.navBox, .navBox-small {
+	position: fixed;
+	right: 25px;
+  top:30%;
+  height:120px;
+  font-size: 1.2em;
+  width:12%;
+}
+.navBox img {
+  width: 100%;
+  height: 0px;
+  display: block;
+  margin: auto;
+}
+
+html {
+  *, *:before, *:after {
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+*:before, *:after {
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+}
+html *, html *:before, html *:after {
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+  }
+  *:before, *:after {
+    z-index: -1;
+  }
+  a {
+    text-decoration: none;
+}
+.navBox-btn {
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+  width: 100%;
+  color: black;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: auto;
+  border-bottom: 3px solid black;
+
+}
+.navBox a:before, .navBox-small a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #327c89;
+  transform: translateX(-100%);
+}
+.navBox a:hover, .navBox-small a:hover {
+  color: white;
+}
+.navBox a:hover:before, .navBox-small a:hover:before {
+  transform: translateX(0);
+}
+#img-home {
+  position: absolute;
+  bottom:116px;
+  right:0px;
+  border-radius: 20px 20px 0px 0px;
+}
+#img-code {
+  border-radius: 0px 0px 20px 20px;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+body {
+	width:1000px;
+	display:flex;
+	flex-direction:column;
+	margin-left: auto;
+    margin-right: auto;
+	font-size: 13pt;
+	background: silver;
+	font-family: 'Chakra Petch', sans-serif;
+}
+/* navigation bar containing links */
+nav {
+	width: 100%;
+	padding-top:10px;
+	padding-bottom:10px;
+	color: DarkRed;
+	background: #add8e6;
+	font-size: 20px;
+	text-align: center;
+}
+/* navigation buttons containing links */
+nav ul li {
+	padding: 2px 5px;
+	display: inline-block;
+	margin: 0 9px;
+	background: Azure;
+	border-radius: 5px;
+}
+/* navigation buttons when hovered over/when it's the current page */
+nav ul li:hover, nav ul li.currentPage {
+	background: teal;
+	color: white;
+}
+/* article buttons when hovered over */
+#startChat:hover {
+	background: teal;
+	color: white;
+	padding: 12px 45px;
+	border-radius: 22px;
+}
+/* removes bullet point from lists */
+a {
+   text-decoration: none;
+   color: inherit;
+}
+/* main content */
+article {
+	padding: 20px 20px 40px;
+	background: white;
+	position: relative;
+	overflow: auto;
+	text-align: center;
+}
+/* body Title */
+h1 {
+	font-size: 42px;
+	padding: 15px;
+	font-weight: bold;
+	background: LightCyan;
+	color: DarkRed;
+}
+/* article Title */
+h2 {
+	font-size: 42px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+/* paragraph text font settings */
+p  {
+	font-family: 'Archivo Black', sans-serif;
+}
+
+/*Article Buttons */
+#startChat{
+	padding: 12px 20px;
+	transition: padding .3s, border-radius .3s;
+	display: inline-block;
+	font-size: 19px;
+	font-style:bold;
+	background: Gainsboro;
+	border-radius: 12px;
+	cursor: pointer;
+}
+/* flex container for all items */
+.container {
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	justify-content: center;
+}
+/* all items size and spacing */
+.item {
+	border-radius: 36px;
+	margin:3px;
+	width:460px;
+}
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	bottom:0;
+	right:0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: black; /* Fallback color */
+	background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+	background:Azure;
+  	position: fixed; /* Stay in place */
+  	bottom:0;
+	right:0;
+	border-top: 6px solid Gainsboro;
+	border-left: 6px solid Gainsboro;
+	border-right: 6px solid Gainsboro;
+	width: 500px;
+	height:600px;
+}
+/* Text input for the user's messages. */
+#usermsg {
+    width:400px;
+    border:1px solid Gainsboro;
+}
+/* The box which contains the history of user messages and the technician's messages  */
+#chatBox {
+    text-align:left;
+	position: absolute; /* Stay in place */
+  	top:13%;
+	left:5%;
+    background: white;
+    height:410px;
+    width:430px;
+    border:1px solid Gainsboro;
+    overflow:auto;
+	z-index: 0; /* Sit on top */
+}
+/* Contains the technician's name  */
+#chatTitle {
+	position: absolute; /* Stay in place */
+  	top:0%;
+	left:48%;
+}
+/* Form for the text input #usermsg and for the #submit button. This will help active PHP for sending messages */
+#chatform {
+	position: absolute; /* Stay in place */
+  	top:86%;
+	left:5%;
+}
+/* Button for sending chat message. Will activate PHP using JavaScript*/
+#submit {
+	width: 60px;
+}
+/* Image for the technician, will be in the form of a circle. Found near the #chatTitle*/
+#titleDavid {
+	position: absolute; /* Stay in place */
+	width: 50px;
+	border-radius: 50%;
+  	top: 4%;
+	left: 47%;
+}
+/* Image for the technician, will be in the form of a circle. Found in the #chatbox, next to each tech message*/
+#chatDavid {
+	width:40px;
+	border-radius: 50%;
+	position: absolute; /* Stay in place */
+  	top: 74%;
+	left: 7%;
+}
+/* A placeholder typing gif which will be used to show that the technician is responding currently */
+#typing {
+	position: absolute; /* Stay in place */
+  	top: 70%;
+	left: 15%;
+	width:50px;
+}
+/* A button to begin the chat and open the Modal content */
+#chatStart {
+	display: none; /* Hidden by default */
+	z-index: 2; /* Sit on top */
+	position: absolute; /* Stay in place */
+  	top: 15%;
+	left: 10%;
+	width:250px;
+}
+/* A container for the #typing and tech image */
+#responding {
+	display: none; /* Hidden by default */
+}
+/* The Close Button for the chat */
+.close {
+	color: black;
+  	position: absolute; /* Stay in place */
+  	top:0;
+	left:5%;
+	font-size: 48px;
+	font-weight: bold;
+	transition: font-size .2s;
+}
+/* The Close Button will change to red X when hovered over */
+.close:hover, .close:focus {
+	color: DarkRed;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 53px;
+}
+/* Bottom bar for the webpage*/
+footer {
+	background: Azure;
+	text-align: center;
+	padding: 10px;
+	color: DarkRed;
+	font-size: 16px;
+}
+.navBox {
+  display:block;
+}
+.navBox-small {
+  display: none;
+  background: rgba(255, 255, 255, .7);
+}
+/* resizes the body to match the screen width if viewed on small screen device */
+@media screen and (max-width: 1100px) {
+	body {
+		width:100%;
+	}
+  .navBox {
+    display:none;
+  }
+  .navBox-small {
+    display: block;
+  }
+}

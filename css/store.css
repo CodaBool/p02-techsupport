@@ -1,0 +1,380 @@
+/*
+ * File Name:		store.css
+ * Name:						Coda Bool
+ * Description:		Styles for In Store Services web page (store.html)
+ * Date:			10/29/19
+ */
+
+/* reset rules */
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+   list-style-type: none;
+}
+
+.navBox, .navBox-small {
+	position: fixed;
+	right: 25px;
+  top:30%;
+  height:120px;
+  font-size: 1.2em;
+  width:12%;
+}
+.navBox img {
+  width: 100%;
+  height: 0px;
+  display: block;
+  margin: auto;
+}
+
+html {
+  *, *:before, *:after {
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+*:before, *:after {
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+}
+html *, html *:before, html *:after {
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+  }
+  *:before, *:after {
+    z-index: -1;
+  }
+  a {
+    text-decoration: none;
+}
+.navBox-btn {
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+  width: 100%;
+  color: black;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: auto;
+  border-bottom: 3px solid black;
+
+}
+.navBox a:before, .navBox-small a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #327c89;
+  transform: translateX(-100%);
+}
+.navBox a:hover, .navBox-small a:hover {
+  color: white;
+}
+.navBox a:hover:before, .navBox-small a:hover:before {
+  transform: translateX(0);
+}
+#img-home {
+  position: absolute;
+  bottom:116px;
+  right:0px;
+  border-radius: 20px 20px 0px 0px;
+}
+#img-code {
+  border-radius: 0px 0px 20px 20px;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+body {
+	width:1000px;
+	display:flex;
+	flex-direction:column;
+	margin-left: auto;
+    margin-right: auto;
+	font-size: 13pt;
+	background: silver;
+	font-family: 'Chakra Petch', sans-serif;
+}
+/* navigation bar containing links */
+nav {
+	width: 100%;
+	padding-top:10px;
+	padding-bottom:10px;
+	color: DarkRed;
+	background: #add8e6;
+	font-size: 20px;
+	text-align: center;
+}
+/* navigation buttons containing links */
+nav ul li {
+	padding: 2px 5px;
+	display: inline-block;
+	margin: 0 9px;
+	background: Azure;
+	border-radius: 5px;
+}
+/* navigation buttons when hovered over/when it's the current page */
+nav ul li:hover, nav ul li.currentPage {
+	background: teal;
+	color: white;
+}
+/* removes bullet point from lists */
+a {
+   text-decoration: none;
+   color: inherit;
+}
+/* main content */
+article {
+	padding: 20px 20px 40px;
+	background: white;
+	position: relative;
+	overflow: auto;
+	text-align: center;
+}
+/* body Title */
+h1 {
+	font-size: 42px;
+	padding: 15px;
+	font-weight: bold;
+	background: LightCyan;
+	color: DarkRed;
+}
+/* article Title */
+h2 {
+	font-size: 42px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+h3 {
+	font-size: 32px;
+	text-align: center;
+}
+p  {
+	font-family: 'Archivo Black', sans-serif;
+	font-size: 16pt;
+}
+/* flex container for all items */
+.container {
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	justify-content: center;
+}
+/* all items size and spacing */
+.item {
+	width:460px;
+}
+/* calendar */
+#cal {
+	display: none;
+	position: absolute;
+	left:50px;
+	top: 50px;
+	background: white;
+	color: black;
+	padding: 20px;
+	border:2px solid black;
+	border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	font-size:18pt;
+	font-weight: bold;
+}
+#cal table {
+   clear: both;
+}
+/* title background */
+#cal table caption {
+   font-weight: bold;
+   font-size: 24pt;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   color: white;
+   background: Teal;
+}
+/* Top row day of the week row */
+#cal table th {
+   text-align: right;
+}
+/* Set the size of each box */
+#cal table th, #cal table td {
+   width: 2em;
+   padding: 6px;
+}
+/* The following rows after the first, filled with days of the month. */
+#cal table td {
+   color: rgb(178,184,183);
+   text-align: right;
+   cursor: pointer;
+}
+/* Moves the month back to the previous */
+#prev {
+   float: left;
+   padding: 4px;
+   cursor: pointer;
+}
+/* Moves the month forward to the next */
+#next {
+   float: right;
+   padding: 4px;
+   cursor: pointer;
+}
+#cal table td.futuredate {
+   color: black;
+}
+/* provides a highlight when hovering over a day */
+#cal table td.futuredate:hover, #prev:hover, #next:hover, #close:hover {
+   background: yellow;
+   color: black;
+}
+/* Closes the calendar */
+#close {
+   color: black;
+   float: right;
+   padding: 0 4px;
+   cursor: pointer;
+}
+/* Closes the modal */
+#close span {
+   font-size: 20pt;
+}
+/* Sets a clean layout for the many inputs in the form */
+#reserveForm {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 16px;
+}
+/* Aligns the labels to each input */
+label {
+    grid-column: 1 / 2;
+    padding-right: 5px;
+}
+/* Aligns the form */
+form input, form select {
+    grid-column: 2 / 3;
+	border-style: solid;
+	border-width: 1px;
+}
+textarea {
+	border-style: solid;
+	border-width: 1px;
+	resize: none;
+}
+#buildingImage {
+	width:400px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+#buildingImage:hover {opacity: 0.7;}
+/* The Modal (background) */
+.myModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 60%;
+}
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+/* Added compatibility */
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+/* Added compatibility */
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+/* The Close Button */
+.closeModal {
+  position: absolute;
+  top: 5px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.closeModal:hover,
+.closeModal:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Bottom bar for the webpage*/
+footer {
+	background: Azure;
+	text-align: center;
+	padding: 10px;
+	color: DarkRed;
+	font-size: 16px;
+}
+.navBox {
+  display:block;
+}
+.navBox-small {
+  display: none;
+  background: rgba(255, 255, 255, .7);
+}
+/* resizes the body to match the screen width if viewed on small screen device */
+@media screen and (max-width: 1100px) {
+	body {
+		width:100%;
+	}
+  .navBox {
+    display:none;
+  }
+  .navBox-small {
+    display: block;
+  }
+  #cal {
+    left:50px;
+    top: 300px;
+  }
+}

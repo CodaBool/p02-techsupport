@@ -1,0 +1,247 @@
+/*
+ * File Name:			services.css
+ * Name:						Coda Bool
+ * Description:			Style for the Tech Support Service web page (services.html) for customer help. Shows all the services offered
+ * Date:				10/6/19
+ */
+
+/* reset rules */
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+   list-style-type: none;
+}
+
+.navBox, .navBox-small {
+	position: fixed;
+	right: 25px;
+  top:30%;
+  height:120px;
+  font-size: 1.2em;
+  width:12%;
+}
+.navBox img {
+  width: 100%;
+  height: 0px;
+  display: block;
+  margin: auto;
+}
+
+html {
+  *, *:before, *:after {
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+*:before, *:after {
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+}
+html *, html *:before, html *:after {
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+  }
+  *:before, *:after {
+    z-index: -1;
+  }
+  a {
+    text-decoration: none;
+}
+.navBox-btn {
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+  width: 100%;
+  color: black;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: auto;
+  border-bottom: 3px solid black;
+
+}
+.navBox a:before, .navBox-small a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #327c89;
+  transform: translateX(-100%);
+}
+.navBox a:hover, .navBox-small a:hover {
+  color: white;
+}
+.navBox a:hover:before, .navBox-small a:hover:before {
+  transform: translateX(0);
+}
+#img-home {
+  position: absolute;
+  bottom:116px;
+  right:0px;
+  border-radius: 20px 20px 0px 0px;
+}
+#img-code {
+  border-radius: 0px 0px 20px 20px;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+body {
+	width:1000px;
+	height: 100%;
+	display:flex;
+	flex-direction:column;
+	margin-left: auto;
+    margin-right: auto;
+	font-size: 13pt;
+	background: silver;
+	font-family: 'Chakra Petch', sans-serif;
+}
+/* navigation bar containing links */
+nav {
+	width: 100%;
+	padding: 10px 0px 10px 0px;
+	color: DarkRed;
+	background: #add8e6;
+	font-size: 20px;
+	text-align: center;
+}
+/* navigation buttons containing links */
+nav ul li {
+	padding: 2px 5px;
+	display: inline-block;
+	margin: 0 9px;
+	background: Azure;
+	border-radius: 5px;
+}
+/* navigation buttons when hovered over/when it's the current page */
+nav ul li:hover, nav ul li.currentPage {
+	background: teal;
+	color: white;
+}
+/* article buttons when hovered over */
+.button:hover {
+	background: teal;
+	color: white;
+	padding: 12px 45px;
+	border-radius: 22px;
+}
+/* removes bullet point from lists */
+a {
+   text-decoration: none;
+   color: inherit;
+}
+/* main content */
+article {
+	padding: 20px 20px 40px;
+	background: white;
+	position: relative;
+	overflow: auto;
+	text-align: center;
+}
+/* body Title */
+h1 {
+	font-size: 42px;
+	padding: 15px;
+	font-weight: bold;
+	background: LightCyan;
+	color: DarkRed;
+}
+/* article Title */
+h2 {
+	font-size: 42px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+/* title for each box */
+p  {
+	font-family: 'Archivo Black', sans-serif;
+}
+/*Article Buttons */
+.button{
+	padding: 12px 20px;
+	transition: padding .3s, border-radius .3s;
+	display: inline-block;
+	font-size: 19px;
+	font-style:bold;
+	background: Gainsboro;
+	border-radius: 12px;
+}
+/* flex container for all flex containers */
+.container {
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	justify-content: center;
+}
+/* all items size, spacing, color, and borders */
+.item {
+	border:5px solid #002F48;
+	border-radius: 36px;
+	margin:3px;
+	background: Azure;
+	width:400px;
+}
+.item h3 {
+	font-size: 32px;
+	text-align: center;
+	background:#002F48;
+	border-radius: 25px 25px 0px 0px;
+	color:white;
+}
+/* image of a a chat example */
+#chatImage {
+	height: 120px;
+}
+/* image of a map coverage for in-home service */
+#mapImage {
+	width: 200px;
+}
+/* image of the building exterior */
+#buildingImage {
+	width: 180px;
+}
+/* image of a phone */
+#phoneImage {
+	width: 120px;
+}
+/* Bottom bar for the webpage*/
+footer {
+	background: Azure;
+	text-align: center;
+	padding: 10px;
+	color: DarkRed;
+	font-size: 16px;
+}
+.navBox {
+  display:block;
+}
+.navBox-small {
+  display: none;
+  background: rgba(255, 255, 255, .7);
+}
+/* resizes the body to match the screen width if viewed on small screen device */
+@media screen and (max-width: 1100px) {
+	body {
+		width:100%;
+	}
+  .navBox {
+    display:none;
+  }
+  .navBox-small {
+    display: block;
+  }
+}

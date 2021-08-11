@@ -1,0 +1,206 @@
+<!--
+File Name:			store.html
+Name:						CodaBool
+Description:		Displaying the page for store visit appointment reservation page. The page uses a form and submits with JavaScript for a modal, validation, and calendar
+Date: 					10/9/19
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Tech Support Services</title>
+	<link rel="stylesheet" href="./css/store.css" />
+	<link rel="icon" type="image/png" href="/images/favicon-16x16.gif" sizes="16x16">
+  <link rel="icon" type="image/png" href="/images/favicon-32x32.gif" sizes="32x32">
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<!-- Fonts are pulled from Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Chakra+Petch|Libre+Baskerville|Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<!-- Title -->
+		<h1>Tech Support</h1>
+	</header>
+	<nav>
+		<ul>
+			<!-- Navigational links to each page -->
+			<li><a href="./index.html">Home</a></li>
+			<li class="currentPage"><a href="./services.html">Services</a></li>
+			<li><a href="./gallery.html">Gallery</a></li>
+			<li><a href="./contact.html">Contact</a></li>
+			<li><a href="./about.html">About</a></li>
+		</ul>
+		<ul>
+			<!-- Sub Navigational links to each service page -->
+			<li><a href="./chat.html">Chat</a></li>
+			<li class="currentPage"><a href="./store.html">In Store</a></li>
+			<li><a href="./home.html">In Home</a></li>
+			<li><a href="./contact.html">Phone</a></li>
+		</ul>
+	</nav>
+	<article>
+		<div class="navBox">
+			<img src="./images/navBox-home.png" id="img-home">
+			<a href="http://codabool.com/projects" class="navBox-btn" id="btn-home">GO HOME</a>
+			<a href="https://github.com/CodaBool/p02-techsupport" class="navBox-btn" id="btn-code">SEE CODE</a>
+			<img src="./images/navBox-code.png" id="img-code">
+		</div>
+		<div class="navBox-small">
+			<a href="http://codabool.com/projects" class="navBox-btn" id="btn-home">HOME</a>
+			<a href="https://github.com/CodaBool/p02-techsupport" class="navBox-btn" id="btn-code">CODE</a>
+		</div>
+		<!-- Intro title to the services offered -->
+		<h2>Let's Get Started</h2>
+		<!-- Flex container for the Form and info boxes-->
+		<ul class="container">
+			<!-- Box explaining the hours available and showing the building-->
+			<li class="item">
+				<img src="./images/exterior.jpg" alt="building" id="buildingImage">
+				<!-- Box Title -->
+				<h3>Location and Hours</h3>
+				<!-- Box Description -->
+				<p>some, PLACE</p>
+				<p>Monday - Sunday</p>
+				<p>8 am - 8 pm</p>
+			</li>
+			<!-- Box containing the form -->
+			<li class="item">
+				<!-- Box Title -->
+				<h3>Reserve an Appointment</h3><br>
+				<!-- Form submitted using PHP -->
+				<form name="chat" id="reserveForm" action="./php/action_page.php" method="post" onsubmit="return validateForm()">
+						<label for="name">Name: </label>
+					<input name="name" type="text" id="name" size="13">
+						<div id="nameErrorMessage"></div>
+						<label for="phone">Phone Number: </label>
+					<input name="phone" type="text" id="phone" size="13">
+						<div id="phoneErrorMessage"></div>
+						<label for="email">Email: </label>
+					<input name="email" type="text" id="email" size="13">
+						<div id="emailErrorMessage"></div>
+					<!-- Use of a radio to help correctly select the AM or PM time for the reservation -->
+						<label for="radioAm">Am</label>
+					<input type="radio" name="ampm" value="Am" id="radioAm">
+						<label for="radioPm">Pm</label>
+					<input type="radio" name="ampm" value="Pm" id="radioPm">
+						<label for="time">Time: </label>
+					<select name="timeDrop" id="time"></select>
+						<div id="timeErrorMessage"></div>
+						<label for="date">Date: </label>
+					<input name="date" type="text" id="date" size="13">
+						<div id="dateErrorMessage"></div>
+					<!-- Button to send the data, will connect to PHP -->
+					<input type="submit" alt="Submit" width="170" height="48">
+				</form>
+
+			</li>
+		</ul>
+		<!-- A pop up calendar which appears when clicking on the date input text "date"-->
+		<div id="cal">
+		<!-- Next/Prev to change month-->
+			<div id="prev">&lt; previous</div>
+			<div id="next">next &gt;</div>
+			<table>
+				<caption></caption>
+				<tr>
+					<!-- Sets the top row column values for each day of the week-->
+					<th>Sun</th>
+					<th>Mon</th>
+					<th>Tue</th>
+					<th>Wed</th>
+					<th>Thu</th>
+					<th>Fri</th>
+					<th>Sat</th>
+				</tr>
+				<tr>
+					<!-- Empty rows which are filled using JavaScript-->
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<!-- Close symbol which exits out of the calendar-->
+			<p id="close">close <span>&#9746;</span></p>
+		</div>
+	</article>
+	<!-- A modal to enlarge the building image -->
+	<div id="pictureModal" class="myModal">
+		<span class="closeModal">&times;</span>
+			<!-- Uses the building image again -->
+			<img src="./images/exterior.jpg" alt="building" id="modalBuilding" class="modal-content">
+		<!-- The caption for the building -->
+		<div id="caption">The Building</div>
+	</div>
+	<!-- Bottom footer content which has a helpful number for lost users -->
+	<footer>
+		Having trouble making a reservation?<br> Call ###-###-####. Walk-ins are also welcome!<br>Tech Support &bull; Some, STATE
+	</footer>
+	<!-- Loads the script which has the map modal appear, fills the calendar and adds interactability -->
+	<script src="./javascript/store.js"></script>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn-home").hover(function(){
+			$("#img-home").css("height", 200);
+			}, function(){
+			$("#img-home").css("height", 0);
+		});
+		$("#btn-code").hover(function(){
+			$("#img-code").css("height", 200);
+			}, function(){
+			$("#img-code").css("height", 0);
+		});
+	});
+</script>
+</html>

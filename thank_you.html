@@ -1,0 +1,51 @@
+<!--
+File Name:		thank_you.html
+Name:			CodaBool
+Description:	A thank you page which is the redirect after submiting form data at home and store. This page will redirect after 8 seconds.
+Date:			12/8/2019
+-->
+
+<!DOCTYPE html>
+<head>
+<title>Form submission</title>
+<link rel="icon" type="image/png" href="/images/favicon-16x16.gif" sizes="16x16">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.gif" sizes="32x32">
+</head>
+<style>
+
+span {
+	text-align:center;
+}
+</style>
+<body>
+<script>
+// timer to redirect 8 seconds, then sends the user to index.html 
+redirectTime = "8000";
+redirectURL = "/index.html";
+function timedRedirect() {
+	setTimeout("location.href = redirectURL;",redirectTime);
+
+var timeLeft = 8;
+var elem = document.getElementById('timerdiv');
+var timerId = setInterval(countdown, 1000);
+
+// function for displaying the countdown with updates every second to let the user know what is happening
+function countdown() {
+    if (timeLeft == -1) {
+        clearTimeout(timerId);
+        doSomething();
+    } else {
+        elem.innerHTML = timeLeft + ' seconds until redirected home';
+        timeLeft--;
+    }
+}
+}
+window.onload = function() {
+  timedRedirect();
+};
+</script>
+<span><p><h1>Your Message has been sent</h1><h3> Your appointment is set and you will receive a confirmation soon</h3><br>
+<div id="timerdiv"></div>
+</p></span>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!--
+File Name:			gallery.html
+Name:					CodaBool
+Description:		The content for a gallery space. Images of the building and the services offered. Each image is within a box and can be clicked on to view enlarged.
+Date:				10/1/19
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Tech Support Gallery</title>
+	<link rel="stylesheet" href="./css/gallery.css" />
+	<link rel="icon" type="image/png" href="/images/favicon-16x16.gif" sizes="16x16">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.gif" sizes="32x32">
+		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<!-- Fonts are pulled from Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Chakra+Petch|Libre+Baskerville|Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="top">
+		<header>
+			<!-- Title -->
+			<h1>Tech Support</h1>
+		</header>
+		<nav>
+			<ul>
+				<!-- Navigational links to each page -->
+				<li><a href="./index.html">Home</a></li>
+				<li><a href="./services.html">Services</a></li>
+				<li class="currentPage"><a href="./gallery.html">Gallery</a></li>
+				<li><a href="./contact.html">Contact</a></li>
+				<li><a href="./about.html">About</a></li>
+			</ul>
+		</nav>
+	</div>
+	<article>
+		<div class="navBox">
+			<img src="./images/navBox-home.png" id="img-home">
+			<a href="http://codabool.com/projects" class="navBox-btn" id="btn-home">GO HOME</a>
+			<a href="https://github.com/CodaBool/p02-techsupport" class="navBox-btn" id="btn-code">SEE CODE</a>
+			<img src="./images/navBox-code.png" id="img-code">
+		</div>
+		<div class="navBox-small">
+			<a href="http://codabool.com/projects" class="navBox-btn" id="btn-home">HOME</a>
+			<a href="https://github.com/CodaBool/p02-techsupport" class="navBox-btn" id="btn-code">CODE</a>
+		</div>
+		<!-- Intro title to the service -->
+		<h2>Come on in Gallery</h2>
+		<ul class="container">
+			<li class="item">
+				<!-- Title for the box with an image -->
+				<h3>Exterior</h3>
+				<!-- Image for the box -->
+				<img src="./images/exterior.jpg" alt="Our Location" id="image1" class="galleryImage">
+			</li>
+			<li class="item">
+				<h3>Interior</h3>
+				<img src="./images/interior.jpg" alt="Our Location" id="image2" class="galleryImage">
+			</li>
+			<li class="item">
+				<h3>Computer Repair</h3>
+				<img src="./images/computer_repair.jpg" alt="Our Location" id="image3" class="galleryImage">
+			</li>
+			<li class="item">
+				<h3>Phone Repair</h3>
+				<img src="./images/phone_repair.jpg" alt="Our Location" id="image4" class="galleryImage">
+			</li>
+			<li class="item">
+				<h3>Laptop Repair</h3>
+				<img src="./images/laptop_repair.jpg" alt="Our Location" id="image5" class="galleryImage">
+			</li>
+			<li class="item">
+				<h3>Home Theater</h3>
+				<img src="./images/home_theater.jpg" alt="Our Location" id="image6" class="galleryImage">
+			</li>
+		</ul>
+	</article>
+	<!-- Modal which appears when the user clicks on an image -->
+	<div id="pictureModal" class="myModal">
+		<!-- Close X button -->
+		<span class="closeModal">&times;</span>
+		<div id="modal" class="modal-content">
+			<!-- Image which is filled with an image assigned based on what was clicked-->
+			<img src="" alt="modal image" id="changeMe">
+		</div>
+		<!-- Right arrow which activates the nextImage method-->
+		<a href="javascript:nextImage()"><img src="./images/right.png" alt="Right" id="rightArrow" class="arrow" style="display:none;"></a>
+		<!-- Left arrow which activates the previousImage method-->
+		<a href="javascript:previousImage()"><img src="./images/left.png" alt="Left" id="leftArrow" class="arrow" style="display:none;"></a>
+		<!-- Caption for the selected image -->
+		<div id="caption"></div>
+	</div>
+	<!-- Bottom footer content which has a helpful email for lost users -->
+	<footer>
+		<p>Having trouble? email support: placeholder@mail.com </p>
+		<p>Tech Support &bull; Some, STATE</p>
+	</footer>
+	<!-- Loads the script which has the modal appear and allows movement through the array of pictures  -->
+	<script src="./javascript/gallery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn-home").hover(function(){
+				$("#img-home").css("height", 200);
+				}, function(){
+				$("#img-home").css("height", 0);
+			});
+			$("#btn-code").hover(function(){
+				$("#img-code").css("height", 200);
+				}, function(){
+				$("#img-code").css("height", 0);
+			});
+		});
+	</script>
+</body>
+</html>
